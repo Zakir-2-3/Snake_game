@@ -1,0 +1,229 @@
+body {
+  background-color: #d7d7d7;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  height: 850px;
+  width: 500px;
+  margin: 30px auto;
+  background-image: url("../icons/nokia.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.container-inner {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 152px;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(10, 29px);
+  grid-template-rows: repeat(10, 21px);
+}
+
+.score {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 10px;
+  width: 274px;
+  padding: 9px 0px 3px;
+}
+
+.cell {
+  width: 30px;
+  height: 22px;
+  background-color: #91b5e0;
+  border: 1px solid #333232;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+
+.snake {
+  background-color: #9a092b;
+}
+
+.game-board > div:nth-child(1) {
+  border-top-left-radius: 14px;
+}
+
+.game-board > div:nth-child(10) {
+  border-top-right-radius: 14px;
+}
+
+.game-board > div:nth-child(91) {
+  border-bottom-left-radius: 14px;
+}
+
+.game-board > div:nth-child(100) {
+  border-bottom-right-radius: 14px;
+}
+
+.food {
+  background-color: #0ba511;
+}
+
+span {
+  color: #fff;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.btn {
+  display: block;
+  background-color: #848484;
+  color: #fff;
+  height: 72px;
+  width: 112px;
+  word-wrap: break-word;
+  margin-top: 81px;
+  border: 2px solid #777373;
+  border-radius: 14px;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  -ms-border-radius: 14px;
+  -o-border-radius: 14px;
+  font-family: monospace;
+  font-size: 18px;
+  font-weight: 600;
+  transition: 0.1s ease-in-out;
+  -webkit-transition: 0.1s ease-in-out;
+  -moz-transition: 0.1s ease-in-out;
+  -ms-transition: 0.1s ease-in-out;
+  -o-transition: 0.1s ease-in-out;
+}
+
+.btn:active {
+  box-shadow: inset 0px 0px 7px 3px #626161d6;
+}
+
+#btn2 {
+  display: none;
+}
+
+.result-popup {
+  display: none;
+  animation: popup 0.3s linear forwards;
+  -webkit-animation: popup 0.3s linear forwards;
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  width: 295px;
+  height: 213px;
+  position: absolute;
+  top: 28px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  backdrop-filter: blur(3px);
+  background-color: rgba(255, 255, 255, 0%);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px 0px;
+  color: #fff;
+  font-family: system-ui;
+  font-size: 23px;
+}
+
+.result-popup p {
+  font-weight: 700;
+  color: #bf0b35;
+  letter-spacing: 1.1px;
+}
+
+.result-popup p:last-child {
+  color: #fff;
+}
+
+@keyframes popup {
+  0% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+  }
+  10% {
+    transform: scale(0.1);
+    -webkit-transform: scale(0.1);
+    -moz-transform: scale(0.1);
+    -ms-transform: scale(0.1);
+    -o-transform: scale(0.1);
+  }
+  20% {
+    transform: scale(0.2);
+    -webkit-transform: scale(0.2);
+    -moz-transform: scale(0.2);
+    -ms-transform: scale(0.2);
+    -o-transform: scale(0.2);
+  }
+  40% {
+    transform: scale(0.4);
+    -webkit-transform: scale(0.4);
+    -moz-transform: scale(0.4);
+    -ms-transform: scale(0.4);
+    -o-transform: scale(0.4);
+  }
+  60% {
+    transform: scale(0.6);
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    -ms-transform: scale(0.6);
+    -o-transform: scale(0.6);
+  }
+  80% {
+    transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    -o-transform: scale(0.8);
+  }
+  90% {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+  }
+  95% {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+  }
+  97% {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+  }
+}
